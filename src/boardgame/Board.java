@@ -33,14 +33,13 @@ public class Board {
     }
 
     public Piece piece(Position position) {
+
         if (!positionExists(position)) {
             throw new BoardException("Position not on the board");
         }
         return pieces[position.getRow()][position.getColumn()];
     }
 
-    //coloca uma peca na posicao
-    //indica que a peca esta na posicao especificada
     public void placePiece(Piece piece, Position position) {
         if (thereIsAPiece(position)){
             throw new BoardException("There is already a piece on position " + position);
